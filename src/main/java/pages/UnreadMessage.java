@@ -21,7 +21,7 @@ public class UnreadMessage {
 
     public int unreadmsgPage(){
         String totalUnreadstr;
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[data-tooltip='Inbox'] span")));
+        wait.until(ExpectedConditions.titleContains("Inbox"));
         try{
             totalUnreadstr = totalUnreadMsg.getText();
         }

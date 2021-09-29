@@ -21,7 +21,7 @@ public class LogOut{
     }
     public WebElement signOutBtn(){
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[aria-label='Account Information']")));
-        return driver.findElement(By.xpath("//a [text()='Sign out']"));
+        return driver.findElement(By.cssSelector("a#gb_71"));
     }
 
 

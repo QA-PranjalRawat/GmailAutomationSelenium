@@ -38,6 +38,7 @@ public class CountUnreadMsg {
         } catch (InterruptedException e) {
         }
         count += countUnread.size();
+        System.out.println(count);
     }
 
 

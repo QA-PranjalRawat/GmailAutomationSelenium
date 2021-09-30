@@ -20,8 +20,8 @@ public class CheckMailSent{
     }
 
     public WebElement clickSent(){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("aHS-bnu")));
-        return driver.findElement(By.className("aHS-bnu"));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.aHS-bnu")));
+        return driver.findElement(By.cssSelector("div.aHS-bnu"));
     }
     public WebElement lastMail(){
         wait.until(ExpectedConditions.titleContains("Sent Mail"));

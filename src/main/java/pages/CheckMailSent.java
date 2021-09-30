@@ -16,12 +16,12 @@ public class CheckMailSent{
 
     public CheckMailSent(WebDriver driver){
         this.driver=driver;
-        this.wait = new WebDriverWait(driver,10);
+        this.wait = new WebDriverWait(driver,30);
     }
 
     public WebElement clickSent(){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.aHS-bnu")));
-        return driver.findElement(By.cssSelector("div.aHS-bnu"));
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div .aHS-bnu")));
+        return driver.findElement(By.cssSelector("div .aHS-bnu"));
     }
     public WebElement lastMail(){
         wait.until(ExpectedConditions.titleContains("Sent Mail"));
@@ -31,9 +31,12 @@ public class CheckMailSent{
 
 
     public void checkMailSent(String subject){
-        clickSent().click();
+        try {
+            clickSent().click();
+            lastMail().click();
+        } catch (Exception e) {
+        }
 
-        lastMail().click();
 
         wait.until(ExpectedConditions.titleContains(subject));
         Assert.assertTrue(driver.getTitle().contains(subject));

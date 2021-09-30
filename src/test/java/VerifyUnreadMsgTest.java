@@ -30,7 +30,7 @@ public class VerifyUnreadMsgTest extends BaseTest{
     }
 
     @Test(dependsOnMethods = {"unreadMsgTest"})
-    public void countUnreadMsgTest() throws InterruptedException {
+    public void countUnreadMsgTest() {
         CountUnreadMsg countMsg = new CountUnreadMsg(driver);
         countUnread = countMsg.initCountMsg();
     }

@@ -33,19 +33,21 @@ public class CountUnreadMsg {
 
 
     public void countMsg(){
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+        }
         count += countUnread.size();
     }
 
 
 
-    public int initCountMsg() throws InterruptedException {
+    public int initCountMsg(){
         countMsg();
         total = Integer.parseInt(TotalMsg.getText());
-        int i = total;
-        i = i/50;
+        int i = total/50;
         while(i>0){
             NextList.click();
-            Thread.sleep(2000);
             countMsg();
             i--;
         }
